@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block title %}
+    成员管理|成员列表
+{% endblock %}
+
+{% block header_extends %}
+        <link rel="stylesheet" href="{% static 'list.css' %}">
+{% endblock %}
+
+
+{% block content %}
+    <div>
+        <a href="{% url 'member:member_add' %}">
+            <h3>添加成员</h3>
+        </a>
+    </div>
+    <div>
+        {% for member in members  %}
+            <a href="{% url 'member:member_detail' member.pk%}">
+                <p>{{ member.xh }}</p>
+            </a>
+        {% endfor %}
+    </div>
+
+{% endblock %}

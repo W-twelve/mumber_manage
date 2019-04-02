@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block title %}
+    成员管理|个人信息
+{% endblock %}
+
+{% block header_extends %}
+        <link rel="stylesheet" href="{% static 'detail.css' %}">
+{% endblock %}
+
+{% block content %}
+{#    {% for %}#}
+{#    {{ field }}#}
+
+    <ul>
+        <li>学号：<a>{{ member.xh }} </a></li>
+        <li>姓名：<a>{{member.name}}</a></li>
+        <li>年龄：<a>{{member.age}}</a></li>
+        <li>性别：<a>{{member.sex}}</a></li>
+        <li>院系：<a>{{member.yx}}</a></li>
+        <li>专业：<a>{{member.zy}}</a></li>
+        <li>年级：<a>{{member.nj}}</a></li>
+        <li>籍贯:<a>{{member.jg}}</a></li>
+        <li>部门:<a>{{member.bm}}</a></li>
+        <li>组别:<a>{{member.zb}}</a></li>
+        <li>QQ：<a>{{member.qq}}</a></li>
+        <li>邮箱：<a>{{member.email}}</a></li>
+        <li>经验：<a>{{member.jy}}</a></li>
+        <li>特长：<a>{{member.tc}}</a></li>
+        <li>联系电话：<a>{{member.tel}}</a></li>
+        <li>加入团队时间：<a>{{member.join_time}}</a></li>
+        <li>是否考研：<a>{{member.SFKY}}</a></li>
+        <li>是否勤工：<a>{{member.SFQG}}</a></li>
+        <li>银行卡号：<a>{{member.YHKH}}</a></li>
+        <li>权限等级：<a>{{member.QX}}</a></li>
+    </ul>
+
+{% endblock %}

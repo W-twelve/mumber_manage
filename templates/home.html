@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block title %}
+    成员管理|首页
+{% endblock %}
+
+{% block header_extends %}
+        <link rel="stylesheet" href="{% static 'home.css' %}">
+{% endblock %}
+
+
+{% block content %}
+    <h1>双零团队</h1>
+{#    <h3 class="home_content">欢迎访问我的网站</h3>#}
+    <a href="{% url 'member:member_list' %}"><h2>成员列表</h2></a>
+{% endblock %}

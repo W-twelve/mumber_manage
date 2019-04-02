@@ -1,0 +1,124 @@
+{#<!DOCTYPE html>#}
+{#<html lang="en">#}
+{#<head>#}
+{#    <meta charset="UTF-8">#}
+{#    <title>#}
+{#        {% block title %}#}
+{#        {% endblock %}#}
+{#    </title>#}
+{#    <style>#}
+{#        body {#}
+{#            width: 960px;#}
+{#            margin: 0 auto;#}
+{#        }#}
+{##}
+{#        .center {#}
+{#            text-align: center;#}
+{#        }#}
+{##}
+{#        #menu {#}
+{#            margin-bottom: 100px;#}
+{#            margin-left: 276px;#}
+{#        }#}
+{##}
+{#        #menu ul {#}
+{##}
+{#        }#}
+{##}
+{#        #menu li {#}
+{#            float: left;#}
+{#            list-style: none;#}
+{#            margin-right: 20px;#}
+{#        }#}
+{##}
+{#        #menu a {#}
+{#            text-decoration: none;#}
+{#        }#}
+{##}
+{#        #main {#}
+{#            clear: both;#}
+{#        }#}
+{##}
+{#        #footer {#}
+{#            margin-top: 20px;#}
+{#        }#}
+{##}
+{#        #main input {#}
+{#            margin-bottom: 20px;#}
+{#        }#}
+{#    </style>#}
+{#</head>#}
+{#<body>#}
+{#    <h1 class="center">#}
+{#        {% block systemName %}#}
+{#        {% endblock %}#}
+{#    </h1>#}
+{#    <div class="center"  id="menu">#}
+{#        <ul>#}
+{#            <li><a href="#">学生信息管理</a></li>#}
+{#            <li><a href="#">课程信息管理</a></li>#}
+{#            <li><a href="#">成绩信息管理</a></li>#}
+{#        </ul>#}
+{#    </div>#}
+{#    <div id="main" class="center">#}
+{#        {% block main %}#}
+{#        {% endblock %}#}
+{#    </div>#}
+{##}
+{#    <h2 id="footer" class="center">©Qingle 2018年</h2>#}
+{#    <script src="/static/jquery-1.12.4.min.js"></script>#}
+{#    <script>#}
+{#        $(function () {#}
+{#            if($('#message').val() != ""){#}
+{#                alert($('#message').val());#}
+{#                return#}
+{#            }#}
+{#        })#}
+{#    </script>#}
+{#</body>#}
+{#</html>#}
+
+
+{% extends "base.html" %}
+{% block title %}
+    添加学生信息
+{% endblock %}
+
+
+{% block content %}
+    <h3 class="center">学生信息添加</h3>
+    <input type="hidden" id="message" value="{{ message }}">
+    <form action="{% url 'member:member_add' %}" method="post">
+    {% csrf_token %}
+        学号：<input type="text" name="xh"><br>
+        姓名：<input type="text" name="name"><br>
+        性别：<input type="text" name="sex"><br>
+        年龄：<input type="text" name="age"><br>
+        院系：<input type="text" name="yx"><br>
+        专业：<input type="text" name="zy"><br>
+        年级：<input type="text" name="nj"><br>
+        籍贯：<input type="text" name="jg"><br>
+        所在部门：<input type="text" name="bm"><br>
+        所在组：<input type="text" name="zb"><br>
+        QQ：<input type="text" name="qq"><br>
+        邮箱：<input type="text" name="email"><br>
+        项目经验：<input type="text" name="jy"><br>
+        特长：<input type="text" name="tc"><br>
+        联系电话：<input type="text" name="tel"><br>
+        加入团队间：<input type="text" name="join_time"><br>
+        有无考研意向：<input type="text" name="SFKY"><br>
+        是否是勤工：<input type="text" name="SFQG"><br>
+        银行卡号：<input type="text" name="YHKH"><br>
+        权限：<input type="" name="QX"><br>
+        <input type="submit" value="添加">
+    </form>
+{#    <script>#}
+{#        $(function () {#}
+{#            if($('#message').val() != ""){#}
+{#                alert($('#message').val());#}
+{#                return#}
+{#            }#}
+{#        })#}
+{#    </script>#}
+{% endblock %}
+
